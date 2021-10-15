@@ -1,0 +1,14 @@
+$primary: rgb(3, 25, 122);
+$secondary: #5ecae4;
+$tertiary: #d13cd0;
+
+div {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+}
+
+
+
+
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap-vue/src/index.scss';
