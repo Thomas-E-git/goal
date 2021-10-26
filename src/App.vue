@@ -1,11 +1,20 @@
 <template>
   <div id="app">
+    <audio id="audio" src="" controls loop muted="muted"></audio>
     <img src="./assets/logo.png" alt="logo du jeu Game Of A Life" class="col-3 mb-1">
     <router-view/>
   </div>
 </template>
 
-<style >
+<script>
+export default {
+  name: "app",
+}
+</script>
+
+
+<style lang="scss" >
+@import './assets/app.scss';
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -13,11 +22,17 @@
   text-align: center;
   color: #2c3e50;
   background-color: rgb(3, 25, 122);
-  position: fixed;
+  background-position: 100%;
   top: 0%;
   bottom: 0%;
   left: 0%;
   right: 0%;
+}
+audio {
+  position: fixed;
+  top: 2%;
+  right: 1%;
+  z-index: 2000;
 }
 
 #nav {

@@ -38,6 +38,8 @@ export default {
     margin: auto;
     border: solid #5ecae4;
     position: relative;
+    background-size: 100%;
+    overflow: hidden;
   }
 </style> >
   

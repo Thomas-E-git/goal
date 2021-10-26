@@ -22,10 +22,35 @@ const routes = [
     component: () => import('../components/PC1.vue')
   },
   {
+    path: '/lvl1',
+    name: 'lvl1',
+    component: () => import('../views/lvl1.vue')
+  },
+  {
     path: '/lvl2',
     name: 'lvl2',
     component: () => import('../views/lvl2.vue')
-  }
+  },
+  {
+    path: '/lvl3',
+    name: 'lvl3',
+    component: () => import('../views/lvl3.vue')
+  },
+  {
+    path: '/lvl4',
+    name: 'lvl4',
+    component: () => import('../views/lvl4.vue')
+  },
+  /*{
+    path: '/lvl5',
+    name: 'lvl5',
+    component: () => import('../views/lvl5.vue')
+  },
+  {
+    path: '/lvl6',
+    name: 'lvl6',
+    component: () => import('../views/lvl6.vue')
+  },*/
 ]
 
 const router = new VueRouter({
