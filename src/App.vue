@@ -6,7 +6,7 @@
       <font-awesome-icon :icon="['fas', 'sad-tear']" size="4x" />
       <p class="w-75 my-3">La taille de votre écran n'est pas optimisée pour le mode aventure, il doit avoir au minimum une largeur de 960 pixels.<br> Toutes mes excuses pour la gêne occasionée, j'espère vous revoir très vite.</p>
     </div>
-    <router-view v-if="this.window.width >= 960"/>
+    <router-view v-if="this.window.width >= 960" />
     <footer class="bg-white pt-3 mt-5 position-relative" v-if="this.window.width >= 960">
       <div class="box-me col-9 rounded d-flex justify-content-around align-items-center py-3 bg-secondary">
         <div class="me-pic"><img src="./assets/img/me.jpg" alt="Ma photo de profil" class="w-100"></div>
