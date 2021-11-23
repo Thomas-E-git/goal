@@ -31,7 +31,7 @@ export default {
       let next = document.getElementById("next");
       let text = document.getElementById("text");
       let closeTuto = document.getElementById("closetuto");
-      let instructions = [`<p> Heureusement, j'ai prévu une solution de secours qui permet de sortir d'ici mais il faut être 2 pour activer le mécanisme. <br> Il faut alors que vous traversiez les différentes pièces de ce monde pour me rejoigne afin que l'on puisse sortir d'ici ensemble !</p>`,`<p>Dans chaque pièces, il y'a des éléments du décors avec lesquels vous pouvez interagir, vous découvrirez alors qui je suis, mais surtout, vous trouverez le moyen de passer à la pièce suivante, alors ne négligez aucun élément, il peut être utile.
+      let instructions = [`<p> Heureusement, j'ai prévu une solution de secours qui permet de sortir d'ici mais il faut être 2 pour activer le mécanisme. <br> Il faut alors que vous traversiez les différentes pièces de ce monde pour me rejoindre afin que l'on puisse sortir d'ici ensemble !</p>`,`<p>Dans chaque pièce, il y'a des éléments du décor avec lesquels vous pouvez interagir, vous découvrirez alors qui je suis, mais surtout, vous trouverez le moyen de passer à la pièce suivante, alors ne négligez aucun élément, il peut être utile.
       </p>`,`<p>Aussi, dans chaque pièce se trouve un objet éléctronique ou informatique, ils vous permettront d'accéder à mes projets professionnels réalisés au fur et à mesure de mon parcours, et ils peuvent cacher des indices.
       </p>`, `<p>Pour intéragir avec les éléments, vous devez vous placer devant et vous laisser guider. <br> Pour déplacer votre joueur, utilisez les flèches de votre clavier <br> Bonne chance !</p>`];
       const response = await (this.i += 1)

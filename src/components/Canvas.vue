@@ -33,7 +33,7 @@
           <div id="modale"></div>
           <div id="open" class="h5 p-3">
             <p>{{openText}}</p>
-            <button @click="togglePC()" class="mr-2">Oui</button><button class="ml-2">Non</button>
+            <button @click="togglePC()" class="mr-2">Oui</button>
           </div>
       </div>
       <GoEnd />

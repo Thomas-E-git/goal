@@ -3,7 +3,7 @@
             <div id="modale"></div>
             <div id="open" class="h5 p-3">
                 <p>Je suis venu en vélo jusqu'ici avant de me rendre compte de mon erreur, celà fait de longues années, j'ai eu tout le temps de m'occuper du jardin et de mes plantes, j'espère que vous êtes allé voir mon vélo et les plantes à coté du potager ! <br><br> Voulez-vous que l'on parte d'ici ?</p>
-                <button @click="endGame" class="mr-2">Oui</button><button class="ml-2">Non</button>
+                <button @click="endGame" class="mr-2">Oui</button>
           </div>
       </div>
 </template>

@@ -9,7 +9,7 @@
       </div>
       <div id="open" class="text-center">
         <p>Voulez-vous voir le tableau ?</p>
-        <button class="mr-3" v-on:click="open"> oui </button> <button> non </button>
+        <button class="mr-3" v-on:click="open"> oui </button>
       </div>
       <div id="code">
         <label for="code">Entrez le code d'accès : </label>

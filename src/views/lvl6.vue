@@ -94,7 +94,7 @@ export default {
         if (this.posX >= 480 && this.posX <= 560  && this.posY == 390) {
             bulle.style.setProperty('visibility','visible');
             bulleText.innerHTML = `
-            J'utilise très souvent le vélo pour me déplacer, que ce soit des courtes ou moyennes distances. C'est aussi un réel plaisir et la plus longue distance que j'ai effectué pour le moment est d'envion 300 kilomètres sur 4 jours lors d'un périple le long de l'océan Atlantique`;
+            J'utilise très souvent le vélo pour me déplacer, que ce soit des courtes ou moyennes distances. C'est aussi un réel plaisir et la plus longue distance que j'ai effectuée pour le moment est d'envion 300 kilomètres sur 4 jours lors d'un périple le long de l'océan Atlantique`;
         } else if (this.posX >= 460 && this.posX <= 590  && this.posY >= 100 && this.posY <= 110) {
             bulle.style.setProperty('visibility','visible');
             bulleText.innerHTML = `

@@ -103,12 +103,12 @@ export default {
           openPC.style.setProperty('display', 'block')
       } else if (this.posX >= 600 && this.posX <= 660 && this.posY >= 345) {
         bulle.style.setProperty('visibility','visible');
-        bulleText.innerHTML = `Le sport a toujours pris une place importante dans ma vie, j'ai commencé par le judo jusqu'au niveau départementale, c'est le sport dans lequel je me suis le plus illustré compétitivement, j'ai également pratiqué du football et du tennis de table en club. <br> Aujourd'hui, je pratique plusieurs sports sur mon temps libre tels que le tennis, le cyclisme et la boxe, ça me permet d'évacuer, de passer de bons moments avec mes amis et de garder une certaine forme !`;
+        bulleText.innerHTML = `Le sport a toujours pris une place importante dans ma vie, j'ai commencé par le judo jusqu'au niveau départemental, c'est le sport dans lequel je me suis le plus illustré compétitivement, j'ai également pratiqué du football et du tennis de table en club. <br> Aujourd'hui, je pratique plusieurs sports sur mon temps libre tels que le tennis, le cyclisme et la boxe, ça me permet d'évacuer, de passer de bons moments avec mes amis et de garder une certaine forme !`;
       
       } else if (this.posX >= 690 && this.posY >= 205 && this.posY <= 245) {
         bulle.style.setProperty('visibility','visible');
         bulleText.innerHTML = `
-        le code secret est composé de 12 lettres, la première partie du code est le sport que j'ai pratiqué au plus haut niveau et la seconde est le dessert le plus chère proposé par le restaurant "Le délice des sens"
+        le code secret est composé de 12 lettres, la première partie du code est le sport que j'ai pratiqué au plus haut niveau et la seconde est le dessert le plus cher proposé par le restaurant "Le délice des sens"
         <br>Le tout est sans espace et sans majuscules, petit indice: N'allez pas chercher le restaurant sur internet mais sur l'ordinateur de la chambre`;
         codePorte.style.setProperty('display','block');
       } else {
