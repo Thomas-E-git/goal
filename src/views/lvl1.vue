@@ -3,12 +3,12 @@
     <div id="canvas" class="canvas">
       <User v-bind:posX="posX" v-bind:posY="posY" />
       <Bulle />
-      <Transition />
+      <Transition v-bind:transition="transition"/>
       <div id="tableau">
         <button id="close" v-on:click="close">Fermer le tableau</button>
       </div>
       <div id="open" class="text-center">
-        <p>Veux-tu voir le tableau ?</p>
+        <p>Voulez-vous voir le tableau ?</p>
         <button class="mr-3" v-on:click="open"> oui </button> <button> non </button>
       </div>
       <div id="code">
@@ -56,7 +56,8 @@ export default {
       codePorte : null,
       img: `url(${require('../assets/img/PC.png')})`,
       link: "https://thomas-e-git.github.io/Projet2_ThomasEstupina_02112020/",
-      text: "Vous allez être redirigé (dans une nouvelle fenêtre) vers la page Github de mon premier projet en tant que Développeur web, il s'agit une intégration web"
+      text: "Vous allez être redirigé (dans une nouvelle fenêtre) vers la page Github de mon premier projet en tant que Développeur web, il s'agit une intégration web",
+      transition: true
     }
   },
 
@@ -113,12 +114,12 @@ export default {
       } else if (this.posX <= 440 && this.posX >= 390 && this.posY == 265) {
         bulle.style.setProperty('visibility','visible');
         bulleText.innerHTML = `
-        Quel joli tableau ! Je suis un adepte d'E-sport, J'aime jouer aux jeux et regarder les compétitions en ligne qui rassemblent des dixaines de milliers de spéctateurs et viewers, J'ai déjà participé à plusieurs évenements majeurs et j'espère pouvoir le refaire !`;
+        Quel joli tableau ! Je suis un adepte d'E-sport, J'aime jouer aux jeux et regarder les compétitions en ligne qui rassemblent des dixaines de milliers de spéctateurs et viewers. J'ai déjà participé à plusieurs évenements majeurs et j'espère pouvoir le refaire !`;
         open.style.setProperty('visibility','visible')
       } else if ((this.posX <= 630 && this.posX >= 560 && this.posY >= 465)) {
         bulle.style.setProperty('visibility','visible');
         bulleText.innerHTML = `
-        Pour passer à l'étape suivante, tu vas devoir trouver le code secret, il est composé de 8 lettres, c'est le nom du premier site de réservation en ligne que j'ai réalisé en tant que tout nouveau développeur`;
+        Pour passer à l'étape suivante, vous devez trouver le code secret, il est composé de 8 lettres, c'est le nom du premier site de réservation en ligne que j'ai réalisé en tant que tout nouveau développeur`;
         codePorte.style.setProperty('display','block');
       } else {
         bulle.style.setProperty('visibility','hidden');
@@ -126,10 +127,6 @@ export default {
         code.style.setProperty('visibility','hidden');
         codePorte.style.setProperty('display','none');
       }
-      
-      
-      console.log(this.posX, this.posY)
-      console.log("test")
     },
 
     open : function (){
@@ -140,8 +137,6 @@ export default {
     },
     togglePC : function() {
       let error = document.getElementById("error");
-      console.log("testpc")
-      
       if(this.code == 1910) {
         this.revelePC = !this.revelePC
         error.innerHTML = ""

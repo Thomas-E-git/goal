@@ -4,7 +4,7 @@
       <div class="h2 text-left text-white ml-3 mb-1">USB Mode</div>
       <div class="text-center d-flex flex-column justify-content-center tv-content text-white h3" v-if="usbDisplay">Aucune entrée USB n'est détéctée</div>
       <div class="tv-content text-white row" v-if="!usbDisplay">
-        <div class="text-left h5"><span class="h4">Périphérique détécté</span> : USB de Thomas(zyra)</div>
+        <div class="text-left h5"><span class="h4">Périphérique détécté</span> : USB de Thomas ( zyra )</div>
         <div class="d-flex mt-5" v-if="!projectOpened"> 
           <div class="w-25 mr-5" @click="projectView">
             <img src="../assets/img/folder.png" alt="" class="w-100">
@@ -28,7 +28,7 @@
             </div>
             <div class="note p-3 ml-5">
               <p class="h3 text-secondary">Notes :</p>
-              <p>Mon projet numéro 4 est une optimisation de site web grâce aux actions portées sur le SEO et l'accessibilité du site, comme le contraste, la structure HTML ou encore le balisage</p>
+              <p>Mon projet numéro 3 est une optimisation de site web grâce aux actions portées sur le SEO et l'accessibilité du site, comme le contraste, la structure HTML ou encore le balisage</p>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@ export default {
         projectOpened: false
       }
     },
-    props: ['reveleTv', 'togglePC', 'link', 'text', 'usbDisplay', 'link1', 'text1'],
+    props: ['reveleTv', 'togglePC', 'link', 'text', 'usbDisplay', 'linkk', 'textt'],
     methods : {
     openProject : function() {
       if (window.confirm(this.text)) {
@@ -53,8 +53,8 @@ export default {
       }
     },
     openProject1 : function() {
-      if (window.confirm(this.text1)) {
-        window.open(this.link1);
+      if (window.confirm(this.textt)) {
+        window.open(this.linkk);
       }
     },
     projectView : function() {

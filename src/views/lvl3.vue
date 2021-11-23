@@ -15,8 +15,9 @@
     v-bind:openText="openText"
     v-bind:reveleTv="reveleTv"
     v-bind:togglePC="togglePC"
-    v-bind:link1="link1"
-    v-bind:text1="text1"
+    v-bind:linkk="linkk"
+    v-bind:textt="textt"
+    v-bind:transition="transition"
     />
   </div>
 </template>
@@ -40,8 +41,8 @@ export default {
       posY: 85,
       link: "https://thomas-e-git.github.io/Projet4_Base-avant-optimisation/",
       text: "Vous allez être redirigé (dans une nouvelle fenêtre) vers le site avant optimisation de la Chouette agence",
-      link1: "https://thomas-e-git.github.io/Projet4_ThomasEstupina_29012021/",
-      text1: "Vous allez être redirigé (dans une nouvelle fenêtre) vers le site optimisé de la Chouette agence",
+      linkk: "https://thomas-e-git.github.io/Projet4_ThomasEstupina_29012021/",
+      textt: "Vous allez être redirigé (dans une nouvelle fenêtre) vers le site optimisé de la Chouette agence",
       errorMessage: "Mauvais code ! avez-vous récupéré la clé USB et regardé la télé ?",
       codeExact: "zyra",
       nextLevel: "lvl4",
@@ -49,8 +50,9 @@ export default {
       transiBot: "75px",
       transiLeft: "190px",
       usbDisplay: true,
-      openText: "Voulez-vous allumer la télé ?",
-      reveleTv: false
+      openText: `C'est sur cette télé que je regarde les séries que je préfère, en VOSTFR lorsque c'est possible, ce qui me permet de garder un bon niveau d'Anglais et de le perfectionner, c'est également bien plus agréable. Voulez-vous allumer la télé ?`,
+      reveleTv: false,
+      transition: true
     }
   },
   created: function() {
@@ -59,10 +61,8 @@ export default {
     audio.setAttribute('src',lvl3Song);
     if (audio.getAttribute('muted') == "muted") {
       console.log("le son est désactivé");
-      audio.volume = 0.1
     } else {
       audio.play()
-      audio.volume = 0.1
     }
   },
   destroyed: function() {
@@ -115,13 +115,11 @@ export default {
         bulle.style.setProperty('visibility','visible');
         bulleText.innerHTML = "Vous avez trouvé une clé usb";
         document.removeEventListener("keydown", this.keyDownHandler);
-        document.addEventListener("keydown", function(event) {
-          event.preventDefault()
-        });
+        document.addEventListener("keydown", this.blockKeyboard);
         setTimeout(this.toggleUsb, 2000)
 
       } else if (this.posX >= 550 && this.posX <= 560 && this.posY >= 65 && this.posY <= 105) {
-          openPC.style.setProperty('display', 'block')
+        openPC.style.setProperty('display', 'block')
 
       } else if (this.posX >= 630 && this.posX <= 690  && this.posY >= 465 && this.posY <= 485) {
         bulle.style.setProperty('visibility','visible');
@@ -137,15 +135,17 @@ export default {
     toggleUsb: function() {
       let bulle = document.getElementById("bulle");
       document.addEventListener("keydown", this.keyDownHandler);
-      document.removeEventListener("keydown", function(event) {
-          event.preventDefault()
-        });
+      document.removeEventListener("keydown", this.blockKeyboard);
       this.usbDisplay = false;
       bulle.style.setProperty('visibility','hidden');
     },
     togglePC : function() { 
       this.reveleTv = !this.reveleTv
     },
+    blockKeyboard : function(event) {
+      event.preventDefault()
+      console.log("keyboard blocked")
+    }
   }
 }
 </script>

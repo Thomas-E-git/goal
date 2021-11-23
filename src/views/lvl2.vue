@@ -14,7 +14,9 @@
     v-bind:nextLevel="nextLevel" 
     v-bind:transiBot="transiBot" 
     v-bind:transiLeft="transiLeft" 
-    v-bind:openText="openText" />
+    v-bind:openText="openText"
+    v-bind:transition="transition"
+     />
   </div>
 </template>
 
@@ -44,7 +46,8 @@ export default {
       bg: `url(${require('../assets/img/lvl2.png')})`,
       transiBot: "5px",
       transiLeft: "230px",
-      openText: "Voulez-vous ouvrir le PC de Thomas ?"
+      openText: "Voulez-vous ouvrir le PC de Thomas ?",
+      transition: true
     }
   },
   created: function() {
@@ -53,10 +56,8 @@ export default {
     audio.setAttribute('src',lvl2Song);
     if (audio.getAttribute('muted') == "muted") {
       console.log("le son est désactivé");
-      audio.volume = 0.1
     } else {
       audio.play()
-      audio.volume = 0.1
     }
   },
   destroyed: function() {
@@ -107,7 +108,7 @@ export default {
       } else if (this.posX >= 690 && this.posY >= 205 && this.posY <= 245) {
         bulle.style.setProperty('visibility','visible');
         bulleText.innerHTML = `
-        le code secret est composé de 12 lettres, la première partie du code est le sport que j'ai pratiqué à mon plus haut niveau et la seconde est le dessert le plus chère proposé par le restaurant "Le délice des sens"
+        le code secret est composé de 12 lettres, la première partie du code est le sport que j'ai pratiqué au plus haut niveau et la seconde est le dessert le plus chère proposé par le restaurant "Le délice des sens"
         <br>Le tout est sans espace et sans majuscules, petit indice: N'allez pas chercher le restaurant sur internet mais sur l'ordinateur de la chambre`;
         codePorte.style.setProperty('display','block');
       } else {
@@ -115,7 +116,6 @@ export default {
         codePorte.style.setProperty('display','none');
         openPC.style.setProperty('display', 'none');
       }
-      console.log(this.posX,this.posY)
     },
     togglePC : function() { 
       this.revelePC = !this.revelePC

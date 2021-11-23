@@ -6,16 +6,52 @@
     </div>
     <button class="mt-3" v-on:click="togglePC">Eteindre l'ordinateur</button>
     <div id="projet" class="projet btn" @click="toggleVideo"></div>
-    <div id="openprojet"></div>
+    <a href="https://github.com/Thomas-E-git/Projet5_ThomasEstupina_26022021" target="blank" class="git-link">Lien Github projet Oricamera</a>
+    <div class="open-recette btn" @click="toggleRecette"></div>
+    <div id="recette" class="recette bg-white position-relative p-3" v-if="recette">
+      <button @click="toggleRecette" class="close-recette">X</button>
+      <p class="h3">Recette du Boeuf Bourguignon pour 6 personnes</p>
+      <p class="h5 text-left">INGRÉDIENTS :</p> 
+        <div class="d-flex justify-content-between h6">
+          <ul class="list-style-type-none text-left">
+            <li>Boeuf pour Bourguignon - 1.5kg</li>
+            <li>Beurre - 60g</li>
+            <li>Carotte - 2</li>
+          </ul>
+          <ul class="list-style-type-none text-left">
+            <li>Bouillon de boeuf - 50cl</li>
+            <li>Bouquet garni - 1</li>
+            <li>Lardons - 200g</li>
+          </ul>
+          <ul class="list-style-type-none text-left">
+            <li>Poivre</li>
+            <li>Petits oignons - 10</li>
+            <li>Ail - 2 gousse</li>
+          </ul>
+          <ul class="list-style-type-none text-left">
+            <li>Vin rouge Bourgogne - 50cl</li>
+            <li>Champignons - 250g</li>
+            <li>Sel</li>
+          </ul>
+        </div>
+        <p class="h5 text-left">PRÉPARATION :</p>
+        <div class="h6 text-left">
+          <p>Tailler le bœuf en petits morceaux. Peler l'ail et les oignons entiers. Éplucher et couper les carottes en rondelles > 2mm.</p>
+          <p>Dans une grande cocotte, faire fondre le beurre. Ajouter les oignons entiers et les lardons. Faire revenir en remuant constamment. Lorsqu'ils sont dorés, les retirer avec un écumoire, et réserver.</p>
+          <p>Dans la même cocotte, faire revenir les morceaux de viande à feu vif. Ajouter les carottes, et faire revenir encore 5 mn.</p>
+          <p>Lorsque la viande est bien dorée, saupoudrer de farine (60g) et laisser roussir en remuant</p>
+          <p>Verser le bouillon. Bien gratter les sucs. Remettre les lardons et les oignons dans la cocotte. Verser le vin rouge. Saler, poivrer et ajouter le bouquet garni et les gousses d'ail écrasées. Porter à ébullition. Couvrir et laisser mijoter doucement pendant 3 heures.</p>
+          <p>Au bout de ce temps, ajouter les champignons émincés, et mettre à cuire encore une demi-heure. Retirer le bouquet garni et verser dans un plat. Servir avec des pâtes ou des pommes de terre.</p>
+        </div>
+    </div>
     <div v-if="video" class="video">
       <button class="my-1" v-on:click="toggleVideo">Fermer la vidéo</button>
       <video controls >
-      <source src="../assets/vid/capture.mp4"
+        <source src="../assets/vid/capture.mp4"
               type="video/mp4">
-      Sorry, your browser doesn't support embedded videos.
+        Sorry, your browser doesn't support embedded videos.
       </video>
     </div>
-    
   </div>
 </template>
 
@@ -26,13 +62,17 @@ export default {
   name: 'PCP',
   data() {
     return {
-      video: false
+      video: false,
+      recette: false
     }
   },
   props: ['revelePCP', 'togglePC', 'img', 'link', 'text'],
   methods : {
     toggleVideo : function() {
       this.video = !this.video
+    },
+    toggleRecette : function() {
+      this.recette = !this.recette
     }
   },
   computed: {
@@ -72,6 +112,26 @@ export default {
       left: 5px;
       width: 110px;
       height: 100px;
+    }
+    .git-link {
+      position: absolute;
+      top: 34.5%;
+      right: 0.9%;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+    .open-recette {
+      position: absolute;
+      top: 235px;
+      left: 120px;
+      width: 100px;
+      height: 90px;
+    }
+    .close-recette {
+      position: absolute;
+      top: 3%;
+      right: 1%;
     }
     .loader {
       background-image: none;

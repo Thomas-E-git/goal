@@ -5,8 +5,6 @@
     v-bind:posY="posY" 
     v-bind:bg="bg" 
     v-bind:img="img" 
-    v-bind:link="link" 
-    v-bind:text="text" 
     v-bind:codeExact="codeExact" 
     v-bind:errorMessage="errorMessage" 
     v-bind:nextLevel="nextLevel" 
@@ -15,8 +13,7 @@
     v-bind:openText="openText"
     v-bind:revelePCP="revelePCP"
     v-bind:togglePC="togglePC"
-    v-bind:link1="link1"
-    v-bind:text1="text1"
+    v-bind:transition="transition"
     />
   </div>
 </template>
@@ -29,7 +26,7 @@ import lvl4Song from '../assets/songs/lvl4.mp3'
 
 
 export default {
-    name : 'lvl3',
+    name : 'lvl4',
     components: {
         Canvas,
     },
@@ -40,18 +37,14 @@ export default {
             posY: 10,
             revelePCP: false,
             img: `url(${require('../assets/img/PC3.png')})`,
-            link: "https://thomas-e-git.github.io/Projet4_Base-avant-optimisation/",
-            text: "Vous allez être redirigé (dans une nouvelle fenêtre) vers le site avant optimisation de la Chouette agence",
-            link1: "https://thomas-e-git.github.io/Projet4_ThomasEstupina_29012021/",
-            text1: "Vous allez être redirigé (dans une nouvelle fenêtre) vers le site optimisé de la Chouette agence",
-            errorMessage: "Mauvais code ! avez-vous récupéré la clé USB et regardé la télé ?",
-            codeExact: "zyra",
-            nextLevel: "lvl4",
+            errorMessage: "Mauvais code ! Avez vous regardé la recette sur l'ordinateur ?",
+            codeExact: 2500,
+            nextLevel: "lvl5",
             bg: `url(${require('../assets/img/lvl4.png')})`,
             transiBot: "0px",
             transiLeft: "270px",
             openText: "Voulez-vous allumer l'ordinateur portable ?",
-            
+            transition: true
         }
     },
     created: function() {
@@ -60,10 +53,8 @@ export default {
         audio.setAttribute('src',lvl4Song);
         if (audio.getAttribute('muted') == "muted") {
         console.log("le son est désactivé")
-        audio.volume = 0.1
         } else {
         audio.play()
-        audio.volume = 0.1
         }
     },
     destroyed: function() {
@@ -116,17 +107,20 @@ export default {
         if (this.posX >= 650 && this.posX <= 690 && this.posY >= 340 && this.posY <= 350) {
           openPC.style.setProperty('display', 'block')
 
-        } else if (this.posX >= 630 && this.posX <= 690  && this.posY >= 465 && this.posY <= 485) {
+        } else if (this.posX >= 690 && this.posX <= 710  && this.posY >= 60 && this.posY <= 120) {
             bulle.style.setProperty('visibility','visible');
             bulleText.innerHTML = `
-            le code secret est le nom de ma clé USB`;
+            le code secret est la multiplication du nombres de petits oignons et du nombre de grammes de champignons dans la recette du Boeuf Bourguignon pour 6 personnes`;
             codePorte.style.setProperty('display','block');
+        } else if (this.posX >= 190 && this.posX <= 240  && this.posY >= 330 && this.posY <= 350) {
+            bulle.style.setProperty('visibility','visible');
+            bulleText.innerHTML = `
+            Je me souviens que j'étais en train de préparer un délicieux Boeuf Bourguignon, je suivais une recette sur l'ordinateur. j'aime prendre du temps pour cuisiner, découvrir et faire découvrir de nouveaux plats, la cuisine est pour moi un plaisir à partager`;
         } else {
             bulle.style.setProperty('visibility','hidden');
             codePorte.style.setProperty('display','none');
             openPC.style.setProperty('display', 'none');
         }
-        console.log(this.posX,this.posY)
     },
     togglePC : function() { 
       this.revelePCP = !this.revelePCP

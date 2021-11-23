@@ -8,9 +8,9 @@
       </div>
     </div>
     <div class="avatar jump"><img src="../assets/img/tuto.png" alt="avatar du tutorial me représentant" class="w-100"></div>
-    <div class="instructions text-secondary">
-      <div id="text" class="text h4 mb-5">
-        <p> Bienvenue aventurier ! <br><br> J'ai besoin de ton aide car j'ai fait une terrible erreur en créant ce jeu, une faute d'organisation, j'ai crée chaque pièce de mon propre monde virtuel, mais je n'ai pas pensé à sauvegarder les codes d'accès au fur et à mesure !</p>
+    <div class="instructions ">
+      <div id="text" class="text h5 mb-5 text-primary bg-white">
+        <p> Bienvenue aventurier ! <br><br> J'ai besoin de votre aide car j'ai fait une terrible erreur en créant ce jeu, une faute d'organisation, j'ai créé chaque pièce de mon propre monde virtuel, mais je n'ai pas pensé à sauvegarder les codes d'accès au fur et à mesure !</p>
       </div>
       <div class="my-3"><button class="h4 text-primary" @click="nextTuto" id="next">suivant</button><button class="h4 text-primary" id="closetuto" @click="closeTuto">J'ai compris, c'est parti </button></div>
     </div>
@@ -31,9 +31,9 @@ export default {
       let next = document.getElementById("next");
       let text = document.getElementById("text");
       let closeTuto = document.getElementById("closetuto");
-      let instructions = [`<p> Heureusement, j'ai prévu une solution de secours qui permet de sortir d'ici mais il faut être 2 pour activer le mécanisme. <br> Il faut alors que tu traverses les différentes pièces de ce monde et que tu me rejoigne afin que l'on puisse sortir d'ici ensemble !</p>`,`<p>Dans chaque pièces, il y'a des éléments du décors avec lesquels tu peux intéragir, tu découvrira alors qui je suis, mais surtout, tu trouvera le moyen de passer à la pièce suivante, alors ne néglige aucun élément, il peut être utile.
-      </p>`,`<p>Aussi, dans chaque pièce se trouve un objet éléctronique ou informatique, ils te permettront d'accéder à mes projets professionnels réalisés au fur et à mesure de mon parcours, et ils peuvent cacher des indices.
-      </p>`, `<p>Pour intéragir avec les éléments, tu dois te placer devant et te laissé guider. <br> Pour déplacer ton joueur, utilise les flèches de ton clavier <br> Bonne chance !</p>`];
+      let instructions = [`<p> Heureusement, j'ai prévu une solution de secours qui permet de sortir d'ici mais il faut être 2 pour activer le mécanisme. <br> Il faut alors que vous traversiez les différentes pièces de ce monde pour me rejoigne afin que l'on puisse sortir d'ici ensemble !</p>`,`<p>Dans chaque pièces, il y'a des éléments du décors avec lesquels vous pouvez interagir, vous découvrirez alors qui je suis, mais surtout, vous trouverez le moyen de passer à la pièce suivante, alors ne négligez aucun élément, il peut être utile.
+      </p>`,`<p>Aussi, dans chaque pièce se trouve un objet éléctronique ou informatique, ils vous permettront d'accéder à mes projets professionnels réalisés au fur et à mesure de mon parcours, et ils peuvent cacher des indices.
+      </p>`, `<p>Pour intéragir avec les éléments, vous devez vous placer devant et vous laisser guider. <br> Pour déplacer votre joueur, utilisez les flèches de votre clavier <br> Bonne chance !</p>`];
       const response = await (this.i += 1)
       text.innerHTML = instructions[response];
       if (response == 3) {
@@ -46,7 +46,6 @@ export default {
       let tutorial = document.getElementById("tutorial");
       tutorial.classList.add("disapear");
       setTimeout(()=>{this.$router.push('lvl1')}, 1500);
-      console.log("test")
     }
   }
 }
@@ -67,6 +66,21 @@ export default {
   }
   .disapear {
     opacity: 0;
+  }
+  .text {
+    border-radius: 50px;
+    padding: 5px;
+    padding-top: 20px;
+  }
+  .text::after {
+    content: '';
+    border-left:20px solid transparent;
+    border-right:20px solid transparent;
+    border-top: 20px solid #ffffff;
+    position: absolute;
+    top: 25%;
+    right: -5%;
+    transform: rotate(270deg);
   }
   .avatar {
     position: absolute;

@@ -19,6 +19,9 @@ export default {
     Buttons,
     Tutorial,
   },
+  created() {
+    window.scrollTo(0, 0);
+  },
   methods: {
     activateAudio : function() {
       let audio = document.getElementById("audio")
@@ -34,6 +37,7 @@ export default {
       audio.setAttribute('src',TutoSong);
       audio.pause();
       audio.setAttribute('muted','muted')
+      audio.volume = 0.1;
     },
   }
 }

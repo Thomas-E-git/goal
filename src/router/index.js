@@ -41,20 +41,31 @@ const routes = [
     name: 'lvl4',
     component: () => import('../views/lvl4.vue')
   },
-  /*{
+  {
     path: '/lvl5',
     name: 'lvl5',
     component: () => import('../views/lvl5.vue')
   },
-  {
+ {
     path: '/lvl6',
     name: 'lvl6',
     component: () => import('../views/lvl6.vue')
-  },*/
+  },
+  {
+    path: '/End',
+    name: 'End',
+    component: () => import('../views/End.vue')
+  },
+  {
+    path: '/Portfolio',
+    name: 'Portfolio',
+    component: () => import('../views/Portfolio.vue')
+  }
 ]
 
 const router = new VueRouter({
-  routes
+  mode: 'history',
+  routes,
 })
 
 export default router

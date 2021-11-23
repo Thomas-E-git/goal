@@ -1,5 +1,5 @@
 <template>
-    <div class="transition" id="transition" :style="cssProps"></div>
+    <div class="transition" id="transition" v-if="transition" :style="cssProps"></div>
 </template>
 
 <script>
@@ -7,7 +7,7 @@
 
 export default {
     name: 'Transition',
-    props: ['transiBot','transiLeft'],
+    props: ['transiBot','transiLeft','transition'],
     computed: {
         cssProps() {
             return {
@@ -38,7 +38,7 @@ export default {
                 transform: scale(1);
             }
             100% {
-                transform: scale(25);
+                transform: scale(30);
             }
         }
     }
