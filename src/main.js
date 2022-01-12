@@ -6,11 +6,11 @@ import './assets/app.scss'
 
 Vue.use(BootstrapVue)
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret, faAt, faSadTear } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret, faAt, faSadTear, faLaptopCode, faMobileAlt, faGamepad, faDoorOpen } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedinIn, faJsSquare, faVuejs, faHtml5, faCss3Alt, faSass, faBootstrap, faGit, faNpm, faNode } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faUserSecret, faGithub, faLinkedinIn, faAt, faJsSquare, faVuejs, faHtml5, faCss3Alt, faSass, faBootstrap, faGit, faNpm, faNode, faSadTear)
+library.add(faUserSecret, faGithub, faLinkedinIn, faAt, faJsSquare, faVuejs, faHtml5, faCss3Alt, faSass, faBootstrap, faGit, faNpm, faNode, faSadTear, faLaptopCode, faMobileAlt, faGamepad, faDoorOpen)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

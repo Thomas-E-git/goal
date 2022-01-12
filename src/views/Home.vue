@@ -1,6 +1,16 @@
 <template>
 <div class="mt-5">
   <div class="home">
+    <div class="ban bg-secondary text-primary border border-secondary position-relative">
+      <img class="user" src="../assets/img/user.png" alt="icone utilisateur">
+      <div class="d-flex justify-content-between align-items-end">
+        <font-awesome-icon class="align-self-start" :icon="['fas', 'gamepad']" size="3x" />
+        <font-awesome-icon class="align-self-end" :icon="['fas', 'laptop-code']" size="3x" />
+        <router-link to="Aventure" class="start text-decoration-none h4 my-4 bouton-ban"><a href="#" class="bouton-ban bg-primary">Démarrer le jeu GOAL</a></router-link>
+        <font-awesome-icon class="align-self-start" :icon="['fas', 'mobile-alt']" size="3x" />
+        <font-awesome-icon class="align-self-end" :icon="['fas', 'door-open']" size="3x" />
+      </div>
+    </div>
     <div class="text-primary bg-white py-5">
       <div class="col-sm-10 col-lg-7 mx-auto intro py-5">
         <h1 class="h3 my-3">Bonjour, Je m'appelle Thomas. </h1>
@@ -155,6 +165,85 @@ export default {
     position:relative;
     display:inline-block;
     z-index: 10;
+  }
+  .bouton-ban{
+    color: #d13cd0;
+    & :hover{
+      color:darken($color: #d13cd0, $amount: 15%) ;
+    }
+  }
+  .user {
+    width: 55px;
+    position: absolute;
+    right: 100%;
+    bottom: 0%;
+    animation: user-trail 12s ease-in-out infinite;
+  }
+  @keyframes user-trail {
+    0%{
+      bottom: 0%;
+      right: 100%;
+    }
+    20%{
+      bottom: 0%;
+      right: 80%;
+    }
+    24%{
+      bottom: 70%;
+      right: 80%;
+    }
+    42%{
+      bottom: 70%;
+      right: 48%;
+    }
+    44%{
+      bottom: 70%;
+      right: 48%;
+    }
+    46%{
+      bottom: 90%;
+      right: 48%;
+    }
+    48%{
+      bottom: 70%;
+      right: 48%;
+    }
+    50%{
+      bottom: 90%;
+      right: 48%;
+    }
+    52%{
+      bottom: 70%;
+      right: 48%;
+    }
+    54%{
+      bottom: 90%;
+      right: 48%;
+    }
+    56%{
+      bottom: 70%;
+      right: 48%;
+    }
+    58%{
+      bottom: 70%;
+      right: 48%;
+    }
+    76%{
+      bottom: 70%;
+      right: 25%;
+    }
+    80%{
+      bottom: 00%;
+      right: 25%;
+    }
+    100%{
+      bottom: 0%;
+      right: 0%;
+    }
+  }
+  .line {
+    height: 1rem;
+    width: 75%;
   }
   .start a{
     text-align: center;

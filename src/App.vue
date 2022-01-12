@@ -10,7 +10,7 @@
     <footer class="bg-white pt-3 mt-5 position-relative" v-if="this.window.width >= 960">
       <div class="box-me col-9 rounded d-flex justify-content-around align-items-center py-3 bg-secondary">
         <div class="me-pic"><img src="./assets/img/me.jpg" alt="Ma photo de profil" class="w-100"></div>
-        <p class="h5 text-primary w-50">Je suis à l'écoute d'opportunités professionnelles dans le développement web, contactez-moi !</p>
+        <p class="h5 text-primary w-50">Je suis à l'écoute d'opportunités professionnelles dans le développement web, contactez-moi ! <br> <span class="h6">thomas.estupina@gmail.com</span></p>
         <div class="d-flex justify-content-around flex-wrap w-25">
           <a class="p-2 icon-div" target="blank" href="https://github.com/Thomas-E-git"><font-awesome-icon :icon="['fab', 'github']" size="2x" /></a>
           <a class="p-2 icon-div" target="blank" href="https://www.linkedin.com/in/thomas-estupina-147790162/"><font-awesome-icon :icon="['fab', 'linkedin-in']" size="2x" /></a>
