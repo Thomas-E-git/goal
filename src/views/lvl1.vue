@@ -114,7 +114,7 @@ export default {
       } else if (this.posX <= 440 && this.posX >= 390 && this.posY == 265) {
         bulle.style.setProperty('visibility','visible');
         bulleText.innerHTML = `
-        Quel joli tableau ! Je suis un adepte d'E-sport, J'aime jouer aux jeux et regarder les compétitions en ligne qui rassemblent des dixaines de milliers de spéctateurs et viewers. J'ai déjà participé à plusieurs évenements majeurs et j'espère pouvoir le refaire !`;
+        Quel joli tableau ! Je suis un adepte d'E-sport, J'aime jouer aux jeux et regarder les compétitions en ligne qui rassemblent des dizaines de milliers de spéctateurs. J'ai déjà participé à plusieurs événements majeurs et j'espère pouvoir le refaire !`;
         open.style.setProperty('visibility','visible')
       } else if ((this.posX <= 630 && this.posX >= 560 && this.posY >= 465)) {
         bulle.style.setProperty('visibility','visible');
